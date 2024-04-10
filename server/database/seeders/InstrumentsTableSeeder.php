@@ -54,10 +54,5 @@ class InstrumentsTableSeeder extends Seeder
                 'updated_at' => now(),
             ]);
         }
-
-        \App\Models\Instrument::all()->each(function ($instrument) {
-            $companies = \App\Models\Company::inRandomOrder()->take(rand(1, 5))->pluck('id');
-            $instrument->companies()->attach($companies);
-        });
     }
 }
