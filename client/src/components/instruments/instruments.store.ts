@@ -1,8 +1,6 @@
 import { mande } from "mande";
 import { defineStore } from "pinia";
 
-const api = mande(import.meta.env.VITE_API_URL + "/api/v1/instruments");
-
 export const useInstruments = defineStore("instruments", {
 	state: () => ({
 		type: "us",
@@ -20,13 +18,16 @@ export const useInstruments = defineStore("instruments", {
 	}),
 
 	actions: {
+
 		async getInstruments() {
+			const api = mande(import.meta.env.VITE_API_URL + "/api/v1/instruments");
+
 			try {
 				const response = await api.get({ query: { type: this.type } });
-				this.list = response?.data?.map(item => ({ id: item.id, text: item.name }));
+				this.list = (response as any)?.data?.map((item: any) => ({ id: item.id, text: item.name }));
 
-			} catch (error) {
-				alert(error?.message);
+			} catch (error: any) {
+				console.log(`${error?.message}`);
 			}
 		},
 	},

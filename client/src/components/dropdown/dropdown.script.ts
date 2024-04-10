@@ -15,7 +15,7 @@ export default {
 			type: Function
 		}
 	},
-	setup(props, { emit }) {
+	setup(props: any, { emit }: { emit: any; }) {
 		const showDropdown = ref(false);
 		const searchQuery = ref('');
 		const selectedItem = ref({ id: null, text: 'Choose' });
@@ -27,7 +27,7 @@ export default {
 
 		function filterOptions() {
 			if (searchQuery.value) {
-				filteredOptions.value = props.options.filter((option) =>
+				filteredOptions.value = props.options.filter((option: any) =>
 					option.text.toLowerCase().includes(searchQuery.value.toLowerCase())
 				);
 			} else {
@@ -35,7 +35,7 @@ export default {
 			}
 		}
 
-		function selectItem(option) {
+		function selectItem(option: any) {
 			selectedItem.value = option;
 			showDropdown.value = false;
 			emit('update:selected', option);
