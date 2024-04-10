@@ -1,0 +1,15 @@
+<div class="dropdown">
+	<div @click="toggleDropdown" class="dropdown-trigger">
+		<span>{{ selectedItem.text }}</span>
+		<IconArrowDown class="icon" />
+	</div>
+
+	<div class="dropdown-list" v-show="showDropdown">
+		<div class="dropdown-search">
+			<input class="dropdown-input" type="search" v-model="searchQuery" placeholder="Search..." @input="filterOptions">
+		</div>
+		<div v-for="option in filteredOptions" :key="option.id" class="dropdown-item" @click="selectItem(option)">
+			{{ option.text }}
+		</div>
+	</div>
+</div>

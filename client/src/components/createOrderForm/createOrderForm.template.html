@@ -1,0 +1,22 @@
+<Layout>
+	<template #left>
+		<div class="left">
+			<Header />
+			<Account />
+			<Instruments />
+			<Actions />
+			<OrderInfo />
+			<Values />
+			<ButtonComponent class="primary">
+				<span>Confirm buy order</span>
+				<IconNext />
+			</ButtonComponent>
+			<Footer />
+		</div>
+	</template>
+	<template #right>
+		<div class="right">
+			<OrderBook :orders="orderBookData" />
+		</div>
+	</template>
+</Layout>

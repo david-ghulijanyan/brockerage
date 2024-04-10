@@ -1,0 +1,22 @@
+<div>
+	<div class="values">
+		<div>
+			<label>Number</label>
+			<InputField type="number" />
+		</div>
+		<div>
+			<label>Order type</label>
+			<Dropdown :options="options">Sell</Dropdown>
+		</div>
+		<div>
+			<label>Price</label>
+			<InputField disabled :value="235" type="number" />
+		</div>
+	</div>
+	<div class="total-values">
+		<span>Total Buying 127 securities for total $117 845</span>
+		<div class="fees color-gray">
+			+10.89 USD Fees
+		</div>
+	</div>
+</div>

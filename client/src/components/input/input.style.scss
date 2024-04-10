@@ -1,0 +1,12 @@
+.input-field {
+  padding: 14px;
+  border-radius: 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  width: calc(100% - 34px);
+  &:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+}

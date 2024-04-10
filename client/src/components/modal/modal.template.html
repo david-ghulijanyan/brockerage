@@ -1,0 +1,11 @@
+<div :data-testid="TestIDModalRoot" class="modal-root">
+	<button :data-testid="TestIDModalOpener" @click="openModal">Open Modal</button>
+	<div v-if="showModal" class="modal">
+		<div :data-testid="TestIDModalContent" class="modal-content">
+			<button @click="closeModal" class="close">
+				<IconClose />
+			</button>
+			<slot></slot>
+		</div>
+	</div>
+</div>

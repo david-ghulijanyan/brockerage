@@ -1,0 +1,23 @@
+.values {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+  > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    label {
+      font-weight: 600;
+    }
+  }
+}
+.total-values {
+  margin: 16px;
+  text-align: center;
+  font-size: 12px;
+}
+.fees {
+  margin-top: 8px;
+}

@@ -1,0 +1,14 @@
+<div class="instruments">
+	<h3>Instruments</h3>
+	<div class="selectors">
+		<Dropdown v-on:change="getInstruments" :options="types" />
+		<Dropdown :options="list" />
+	</div>
+	<div class="info color-gray py-m">
+		<IconInfo /><span>AAPL.US 17 600 lots in portfolio</span>
+	</div>
+	<div class="details bg-gray p-m">
+		<span>USD (Global trading)</span>
+		<span>$543 831.55</span>
+	</div>
+</div>

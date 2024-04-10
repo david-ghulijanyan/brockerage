@@ -1,0 +1,30 @@
+.instruments {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  h3 {
+    margin-bottom: 0;
+    font-weight: 600;
+  }
+  .selectors {
+    display: flex;
+    gap: 16px;
+    > div:first-child{
+      flex-basis: 25%;
+    }
+    > div:last-child{
+      flex-basis: 75%;
+    }
+  }
+}
+.info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+

@@ -1,0 +1,56 @@
+.order-book {
+  padding: 16px;
+  margin-top: 30%;
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .order-headers {
+    font-size: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  .order-list {
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      text-align: center;
+      span {
+        text-align: center;
+        line-height: 1;
+        width: 20%;
+        padding: 10px;
+        font-size: 12px;
+        &:nth-child(2) {
+          text-align: left;
+          color: #12867B;
+        }
+        &:last-child {
+          text-align: right;
+          color: #F45857;
+        }
+      }
+      .bg {
+        padding: 0px;
+        position: absolute;
+        height: 100%;
+        width: 0;
+      }
+      &.buy {
+        .bg {
+          background-color: #12867B22;
+          left: 0;
+        }
+      }
+      &.sell {
+        .bg {
+          background-color: #F4585722;
+          right: 0;
+        }
+      }
+    }
+  }
+}

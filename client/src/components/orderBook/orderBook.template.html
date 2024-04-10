@@ -1,0 +1,18 @@
+<div class="order-book">
+	<h2>Order Book AAPL.US</h2>
+	<div class="order-headers">
+		<span>BUY</span>
+		<span>PRICE</span>
+		<span>SELL</span>
+	</div>
+	<div class="order-list">
+		<div v-for="order in orders" :key="order.id" class="order-item"
+			:class="{ 'buy': order.buy !== '-', 'sell': order.sell !== '-' }">
+			<span class="bg" :style="{
+				'width': ((order.buy !== '-' ? order.buy : order.sell) / 100) + '%' }"></span>
+			<span>{{ order.buy }}</span>
+			<span>{{ order.price }}</span>
+			<span>{{ order.sell }}</span>
+		</div>
+	</div>
+</div>
