@@ -117,3 +117,4 @@ If you prefer to use Docker for development, you can use the provided `docker-co
 - add more tests (unit and e2e)
 - separate tests and prod databases
 - add ci/cd pipeline
+- font correction

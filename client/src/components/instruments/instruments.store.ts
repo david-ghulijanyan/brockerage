@@ -14,6 +14,7 @@ export const useInstruments = defineStore("instruments", {
 				text: "EU store"
 			}
 		],
+		listUpdateKey: 0,
 		list: []
 	}),
 
@@ -25,7 +26,7 @@ export const useInstruments = defineStore("instruments", {
 			try {
 				const response = await api.get({ query: { type: this.type } });
 				this.list = (response as any)?.data?.map((item: any) => ({ id: item.id, text: item.name }));
-
+				this.listUpdateKey++;
 			} catch (error: any) {
 				console.log(`${error?.message}`);
 			}

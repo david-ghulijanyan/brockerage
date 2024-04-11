@@ -1,7 +1,7 @@
 <div class="instruments">
 	<h3>Instruments</h3>
 	<div class="selectors">
-		<Dropdown v-on:change="getInstruments" :options="types" />
+		<Dropdown v-on:change="getInstruments" :options="types" :key="listUpdateKey" />
 		<Dropdown :options="list" />
 	</div>
 	<div class="info color-gray py-m">

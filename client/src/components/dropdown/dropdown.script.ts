@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { IconArrowDown } from '../icons';
 
 export default {
@@ -21,6 +21,12 @@ export default {
 		const selectedItem = ref({ id: null, text: 'Choose' });
 		const filteredOptions = ref(props.options);
 
+		watch(() => props.options, (newOptions) => {
+			filteredOptions.value = newOptions;
+			filterOptions();
+		});
+
+
 		function toggleDropdown() {
 			showDropdown.value = !showDropdown.value;
 		}
@@ -40,7 +46,6 @@ export default {
 			showDropdown.value = false;
 			emit('update:selected', option);
 			props.onChange?.(option);
-
 		}
 
 		return { showDropdown, searchQuery, filteredOptions, filterOptions, toggleDropdown, selectedItem, selectItem };

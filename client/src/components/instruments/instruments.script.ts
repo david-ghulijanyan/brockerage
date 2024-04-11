@@ -14,14 +14,15 @@ export default {
 	setup() {
 		const store = useInstruments();
 
-		const { list, type, types } = storeToRefs(store);
+		const { list, type, types, listUpdateKey } = storeToRefs(store);
 		const { getInstruments } = store;
 
 		return {
-			list: list.value,
-			type: type.value,
-			types: types.value,
-			getInstruments
+			list: list,
+			type: type,
+			types: types,
+			getInstruments,
+			listUpdateKey
 		};
 	}
 }; 
